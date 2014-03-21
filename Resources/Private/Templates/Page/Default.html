@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+<html lang="en">
+	<head>
+		<f:section name="meta">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			<meta name="description" content="" />
+			<meta name="author" content="" />
+		</f:section>
+
+		<f:section name="stylesheets">
+			<!-- Bootstrap core CSS -->
+			<link href="../../../Public/css/bootstrap.css" rel="stylesheet" />
+
+			<!-- Add custom CSS here -->
+			<link href="../../../Public/css/business-casual.css" rel="stylesheet" />
+		</f:section>
+	</head>
+
+	<body>
+		<f:section name="body">
+		<div class="brand">{parts.brand -> f:format.raw()}</div>
+		<div class="address-bar">{parts.address -> f:format.raw()}
+		</div>
+
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html">Business Casual</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-ex1-collapse">
+					{parts.menu -> f:format.raw()}
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container -->
+		</nav>
+
+		<div class="container">
+			{content.main -> f:format.raw()}
+		</div>
+		<!-- /.container -->
+
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<p>Copyright &copy; Company 2013</p>
+					</div>
+					<div class="col-lg-12 text-center">
+						{parts.footermenu -> f:format.raw()}
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- JavaScript -->
+		<script src="../../../Public/js/jquery-1.10.2.js"></script>
+		<script src="../../../Public/js/bootstrap.js"></script>
+		<script><![CDATA[
+			// Activates the Carousel
+			$('.carousel').carousel({
+				interval: 5000
+			})
+		]]></script>
+		</f:section>
+	</body>
+</html>

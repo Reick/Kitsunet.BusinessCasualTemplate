@@ -1,0 +1,26 @@
+prototype(Kitsunet.BusinessCasualTemplate:PostList) {
+	collection = ${ElasticSearch.query(site).nodeType('Kitsunet.BusinessCasualTemplate:BlogPost').sortDesc('releaseDate').limit(3).execute()}
+
+	itemRenderer = Kitsunet.BusinessCasualTemplate:Post
+}
+
+prototype(Kitsunet.BusinessCasualTemplate:Post) < prototype(TYPO3.TypoScript:Template) {
+	templatePath = 'resource://Kitsunet.BusinessCasualTemplate/Private/Templates/NodeTypes/Post.html'
+
+	title = ${q(node).property('title')}
+	releaseDate = ${q(node).property('releaseDate')}
+	titleImage = ${q(node).property('titleImage')}
+
+	imageUrl = Kitsunet.Krams:Image {
+		asset = ${q(node).property('titleImage')}
+		maximumWidth = 250
+	}
+
+	node = ${node}
+
+	content = TYPO3.Neos:ContentCollection {
+		nodePath = 'main'
+
+		@process.makeTeaser = ${KitsunetString.sha1(value)}
+	}
+}

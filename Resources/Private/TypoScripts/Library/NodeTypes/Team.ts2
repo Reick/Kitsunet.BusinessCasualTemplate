@@ -1,0 +1,14 @@
+prototype(Kitsunet.BusinessCasualTemplate:Team) {
+
+	teamMember = TYPO3.TypoScript:Template {
+		templatePath = 'resource://Kitsunet.BusinessCasualTemplate/Private/Templates/NodeTypes/TeamMember.html'
+
+		person = ${node}
+
+	  	photo = ${q(node).property('photo')}
+	  	title = ${q(node).property('title')}
+	  	jobTitle = ${q(node).property('jobTitle')}
+	}
+
+	teamMembers = ${q(ElasticSearch.query(site).nodeType('Kitsunet.BusinessCasualTemplate:Person').sortDesc('title').limit(3).execute())}
+}

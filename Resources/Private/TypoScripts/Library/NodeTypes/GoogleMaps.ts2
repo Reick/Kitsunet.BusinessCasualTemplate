@@ -1,0 +1,4 @@
+prototype(Kitsunet.BusinessCasualTemplate:GoogleMaps) {
+
+	isLatitudeAndLongitudeSet = ${!(String.isBlank(q(node).property('longitude')) || String.isBlank(q(node).property('latitude')))}
+}

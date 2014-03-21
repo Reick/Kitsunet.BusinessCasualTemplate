@@ -1,0 +1,199 @@
+# If you need more than just the "main" content area you can
+# uncomment the snippet below. It will add a "sidebar" area
+# to your pages. You can add as many areas as you like, still
+# only those that are rendered in your TypoScript and Template
+# are visible on your page.
+
+'Kitsunet.BusinessCasualTemplate:RootPage':
+  superTypes: ['TYPO3.Neos.NodeTypes:Page']
+  childNodes:
+    brand:
+      type: 'TYPO3.Neos.NodeTypes:Text'
+    address:
+      type: 'TYPO3.Neos.NodeTypes:Text'
+  ui:
+    label: 'Root Page'
+
+'Kitsunet.BusinessCasualTemplate:Person':
+  superTypes: ['TYPO3.Neos.NodeTypes:Page']
+  ui:
+    inlineEditable: FALSE
+    label: 'Person'
+    icon: 'icon-user'
+    inspector:
+      groups:
+        person:
+          label: 'Person data'
+          position: 5
+  properties:
+    title:
+      ui:
+        label: 'Name'
+    photo:
+      type: TYPO3\Media\Domain\Model\ImageVariant
+      ui:
+        label: 'Photo'
+        inspector:
+          group: 'person'
+    jobTitle:
+      type: string
+      ui:
+        label: 'Job Title'
+        inspector:
+          group: 'person'
+
+'Kitsunet.BusinessCasualTemplate:BlogPost':
+  superTypes: [TYPO3.Neos.NodeTypes:Page]
+  ui:
+    label: 'Blog Post'
+    icon: 'icon-file'
+    inspector:
+      groups:
+        post:
+          label: 'Post Info'
+          position: 5
+  properties:
+    author:
+      type: reference
+      ui:
+        label: 'Author'
+        inspector:
+          group: 'post'
+    releaseDate:
+      type: date
+      ui:
+        label: 'Release Date'
+        inspector:
+          group: 'post'
+    titleImage:
+      type: TYPO3\Media\Domain\Model\ImageVariant
+      ui:
+        label: 'Title Image'
+        inspector:
+          group: 'post'
+
+
+'Kitsunet.BusinessCasualTemplate:ContentBox':
+  superTypes: ['TYPO3.Neos.NodeTypes:Headline']
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+  ui:
+    label: 'Content Box'
+    inspector:
+      groups:
+        author:
+          label: 'Author'
+          position: 5
+  properties:
+    title:
+      defaultValue: '<h1>Box headline</h1>'
+      ui:
+        aloha:
+          'format':
+            'b': TRUE
+    author:
+      type: reference
+      ui:
+        label: 'Author'
+        inspector:
+          group: 'author'
+
+'Kitsunet.BusinessCasualTemplate:Carousel':
+  superTypes: ['TYPO3.Neos:Content']
+  childNodes:
+    images:
+      type: 'TYPO3.Neos:ContentCollection'
+  ui:
+    label: 'Carousel'
+
+'Kitsunet.BusinessCasualTemplate:GoogleMaps':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    inlineEditable: FALSE
+    label: 'Google Map'
+    inspector:
+      groups:
+        address:
+          label: 'Address'
+          position: 5
+  properties:
+    latitude:
+      type: 'string'
+      ui:
+        label: 'Latitude'
+        reloadIfChanged: true
+        inspector:
+          group: 'address'
+    longitude:
+      type: 'string'
+      ui:
+       label: 'Longitude'
+       reloadIfChanged: true
+       inspector:
+         group: 'address'
+
+'Kitsunet.BusinessCasualTemplate:Team':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+   inlineEditable: FALSE
+   label: 'Team Display'
+   inspector:
+     groups:
+       team:
+         label: 'Team'
+         position: 5
+  properties:
+   teamStartingPoint:
+     type: reference
+     ui:
+       label: 'Team Starting Point'
+       reloadIfChanged: true
+       inspector:
+         group: 'team'
+
+
+'TYPO3.Neos.NodeTypes:Form':
+  properties:
+    'formIdentifier':
+      ui:
+        inspector:
+          editorOptions:
+            values:
+              '': ~
+              'contact-form':
+                label: 'Contact form'
+
+
+'TYPO3.Neos.NodeTypes:Html':
+  abstract: TRUE
+
+'TYPO3.Neos.NodeTypes:TwoColumn':
+  properties:
+    'layout':
+      defaultValue: '6-6'
+      ui:
+        inspector:
+          editorOptions:
+            values:
+              '50-50': ~
+              '75-25': ~
+              '25-75': ~
+              '66-33': ~
+              '33-66': ~
+              '6-6':
+                label: '50% / 50%'
+              '8-4':
+                label: '66% / 33%'
+              '4-8':
+                label: '33% / 66%'
+
+
+'Ttree.Oembed:Resource':
+  ui:
+    label: 'Video Media'
+
+'Kitsunet.BusinessCasualTemplate:PostList':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Post List'

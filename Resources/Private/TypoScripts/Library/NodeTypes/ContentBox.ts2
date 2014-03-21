@@ -1,0 +1,7 @@
+prototype(Kitsunet.BusinessCasualTemplate:ContentBox) {
+	content = ContentCollection {
+		nodePath = 'content'
+	}
+
+	authorName = ${q(q(node).property('author')).property('title')}
+}

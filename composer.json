@@ -1,0 +1,16 @@
+{
+    "name": "kitsunet/businesscasualtemplate",
+    "type": "typo3-flow-site",
+    "description": "Add description here",
+    "require": {
+        "typo3/neos": "*",
+        "typo3/neos-nodetypes": "*",
+        "typo3/swiftmailer": "*",
+		"ttree/oembed": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Kitsunet\\BusinessCasualTemplate": "Classes"
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace typo3cr=TYPO3\TYPO3CR\ViewHelpers}
+<typo3cr:widget.paginate nodes="{collection}" as="paginatedNodes" configuration="{itemsPerPage: 1}">
+	<f:for each="{paginatedNodes}" as="post">
+		<ts:render path="itemRenderer" context="{node: post}" />
+	</f:for>
+</typo3cr:widget.paginate>

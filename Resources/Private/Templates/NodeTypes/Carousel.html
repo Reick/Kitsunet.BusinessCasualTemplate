@@ -1,0 +1,18 @@
+<div id="carousel-{node.identifier}" class="carousel slide">
+	<!-- Indicators -->
+	<ol class="carousel-indicators hidden-xs">
+		<f:for each="{imageCollection}" as="image" iteration="imageIteration">
+			<li data-target="#carousel-{node.identifier}" data-slide-to="{imageIteration.index}" class="{f:if(condition: imageIteration.isFirst, then: 'active')}"></li>
+		</f:for>
+	</ol>
+
+	{images -> f:format.raw()}
+
+	<!-- Controls -->
+	<a class="left carousel-control" href="#carousel-{node.identifier}" data-slide="prev">
+		<span class="icon-prev"></span>
+	</a>
+	<a class="right carousel-control" href="#carousel-{node.identifier}" data-slide="next">
+		<span class="icon-next"></span>
+	</a>
+</div>

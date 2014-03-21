@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <site identifier="e0558c4c-98e0-614c-67cf-c44996988dd3" type="Kitsunet.BusinessCasualTemplate:RootPage" nodeName="businesscasualtemplate" locale="">
+  <properties>
+   <name>Business Casual</name>
+   <title>Home</title>
+   <state>1</state>
+   <siteResourcesPackageKey>Kitsunet.BusinessCasualTemplate</siteResourcesPackageKey>
+  </properties>
+  <node identifier="ff08ac9b-d059-177b-1f2c-f94095c3a782" type="TYPO3.Neos:ContentCollection" nodeName="main" locale="">
+   <node identifier="b4189fd6-e3c0-d9f3-09e6-af81b678be8e" type="TYPO3.Neos.NodeTypes:Text" nodeName="text1" locale="">
+    <properties>
+     <text><![CDATA[<p>This is the <b>homepage</b></p>]]></text>
+    </properties>
+   </node>
+  </node>
+  <node identifier="1713e68a-8021-25ba-41cc-afeb66bfb414" type="TYPO3.Neos:Shortcut" nodeName="home" locale="">
+   <properties>
+    <targetMode>parentNode</targetMode>
+    <title>Home</title>
+    <targetNode __type="reference"/>
+   </properties>
+  </node>
+  <node identifier="e6579326-d60f-ea89-8441-0749f50fef0e" type="TYPO3.Neos.NodeTypes:Page" nodeName="about" locale="">
+   <properties>
+    <title>About</title>
+   </properties>
+   <node identifier="ef9732d7-e68c-cb08-8de4-468b46984d32" type="TYPO3.Neos:ContentCollection" nodeName="main" locale=""/>
+  </node>
+  <node identifier="9a629f09-a392-6faa-acd0-80b01a45c876" type="TYPO3.Neos.NodeTypes:Page" nodeName="contact" locale="">
+   <properties>
+    <title>Contact</title>
+   </properties>
+   <node identifier="0a935beb-6a04-0a7d-1ea2-574af59451c8" type="TYPO3.Neos:ContentCollection" nodeName="main" locale=""/>
+  </node>
+  <node identifier="9e71fbc6-931f-7097-af2c-2ac1ce17bcf8" type="TYPO3.Neos.NodeTypes:Page" nodeName="subpage" locale="">
+   <properties>
+    <title>A sub page</title>
+   </properties>
+   <node identifier="d16bd4d2-35cb-54b7-b6f3-8548fdf3aae8" type="TYPO3.Neos:ContentCollection" nodeName="main" locale="">
+    <node identifier="aeb3a703-2fa7-5272-e804-4a47c067bc4f" type="TYPO3.Neos.NodeTypes:Text" nodeName="text1" locale="">
+     <properties>
+      <text><![CDATA[<p>This is the first sub page</p>]]></text>
+     </properties>
+    </node>
+   </node>
+  </node>
+  <node identifier="9f8a176b-813a-82ba-e5a4-05ad62020e99" type="TYPO3.Neos.NodeTypes:Page" nodeName="footermenu" locale="" hiddenInIndex="true">
+   <properties>
+    <title>Footermenu</title>
+    <layout></layout>
+    <subpageLayout></subpageLayout>
+   </properties>
+   <node identifier="8311c40a-91d7-d158-cd7d-8cce7955889c" type="TYPO3.Neos:ContentCollection" nodeName="main" locale=""/>
+   <node identifier="155b6c7e-097f-2ca9-3070-0ece932f4965" type="TYPO3.Neos.NodeTypes:Page" nodeName="test1" locale="">
+    <properties>
+     <title>Test1</title>
+    </properties>
+    <node identifier="ed9c8ed4-79ab-1985-e442-5dd23580bc73" type="TYPO3.Neos:ContentCollection" nodeName="main" locale=""/>
+   </node>
+   <node identifier="6c49fbde-47e6-a1b6-8fa8-31b340afdc3d" type="TYPO3.Neos.NodeTypes:Page" nodeName="impressum" locale="">
+    <properties>
+     <title>Impressum</title>
+    </properties>
+    <node identifier="aa4f17f2-89a2-a7d2-5b45-cdc877968e63" type="TYPO3.Neos:ContentCollection" nodeName="main" locale=""/>
+   </node>
+  </node>
+ </site>
+</root>

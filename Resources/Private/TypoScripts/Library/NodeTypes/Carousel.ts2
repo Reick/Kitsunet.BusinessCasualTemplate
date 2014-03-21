@@ -1,0 +1,15 @@
+prototype(Kitsunet.BusinessCasualTemplate:Carousel) {
+
+	prototype(TYPO3.Neos.NodeTypes:Image) {
+		attributes.class = ${'item' + (imageIteration.isFirst ? ' active' : '')}
+		templatePath = 'resource://Kitsunet.BusinessCasualTemplate/Private/Templates/NodeTypes/CarouselImage.html'
+	}
+
+	imageCollection = ${q(node).children('images').children()}
+
+	images = ContentCollection {
+		attributes.class = 'carousel-inner'
+		nodePath = 'images'
+		iterationName = 'imageIteration'
+	}
+}

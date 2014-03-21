@@ -1,0 +1,4 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+<f:for each="{teamMembers}" as="person">
+	<ts:render path="teamMember" context="{node: person}" />
+</f:for>

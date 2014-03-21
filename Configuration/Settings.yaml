@@ -1,0 +1,23 @@
+TYPO3:
+  Form:
+    yamlPersistenceManager:
+      savePath: 'resource://Kitsunet.BusinessCasualTemplate/Private/Form/'
+    presets:
+      bootstrap:
+        title: 'Twitter bootstrap'
+        parentPreset: 'default'
+        formElementTypes:
+          'TYPO3.Form:Base':
+            renderingOptions:
+              layoutPathPattern: 'resource://Kitsunet.BusinessCasualTemplate/Private/Templates/ContactForm/{@type}.html'
+          'TYPO3.Form:FormElement':
+            properties:
+              elementClassAttribute: 'form-control'
+          'TYPO3.Form:MultiLineText':
+            properties:
+              elementClassAttribute: 'form-control'
+
+Kitsunet:
+  BusinessCasualTemplate:
+    site:
+      baseTemplate: 'resource://Kitsunet.BusinessCasualTemplate/Private/Templates/Page/Default.html'
